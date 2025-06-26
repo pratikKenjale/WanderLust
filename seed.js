@@ -9,10 +9,6 @@ const User = require("./models/user");
 const { data: sampleListings } = require("./data");
 const locationIQToken = 'pk.888e4523ae15a9ca48d8cb6d35946124';
 
-// mongoose.connect("mongodb://127.0.0.1:27017/wanderlust", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
 
 const dbUrl = process.env.ATLASDB_URL;
 
