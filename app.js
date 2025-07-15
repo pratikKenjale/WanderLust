@@ -21,6 +21,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Listing = require("./models/listing");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const listings = require("./routes/listing.js");
@@ -29,8 +30,7 @@ const user = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/wanderlust";
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-// const dbUrl = process.env.ATLASDB_URL;
+
 console.log("DB URL is:",process.env.ATLASDB_URL );
 
 
@@ -44,7 +44,7 @@ main()
 
 async function main() {
   await mongoose.connect(dbUrl);
-}
+};
 
 
 
@@ -93,14 +93,9 @@ app.use((req, res, next) => {
    res.locals.currentUser =req.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-  
+  res.locals.req = req; 
   next();
 });
-
-// app.get("/", (req, res) => {
-//   res.send("Hi, I am root");
-// });
-
 
 passport.use(new LocalStrategy(User.authenticate()));
 
@@ -125,3 +120,4 @@ app.listen(8080, () => {
 app.get("/listings/new", (req, res) => {
   res.render("listings/new"); 
 });
+

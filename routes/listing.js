@@ -10,6 +10,19 @@ const multer = require('multer');
 const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
 
+// ✅ SEARCH ROUTE — must be BEFORE any route with ":id"
+router.get("/search", async (req, res) => {
+  const { q } = req.query;
+
+  const listings = await Listing.find({
+    $or: [
+      { title: { $regex: q, $options: "i" } },
+      { location: { $regex: q, $options: "i" } }
+    ]
+  });
+
+  res.render("listings/index", { listings });
+});
 
 router.route("/")
 .get( wrapAsync(listngController.index))
@@ -43,4 +56,6 @@ router.get("/:id/edit",
   wrapAsync(listngController.renderEditForm));
 
 module.exports = router;
+
+
 

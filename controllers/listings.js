@@ -3,8 +3,9 @@ const axios = require("axios");
 
 module.exports.index = async (req, res) => {
   const allListings = await Listing.find({}).populate("owner");
-  res.render("listings/index.ejs", { allListings });
+  res.render("listings/index.ejs", {listings : allListings});
 };
+
 
 module.exports.renderNewForm = (req, res) => { 
   res.render("listings/new.ejs");
@@ -46,18 +47,18 @@ module.exports.createListing = async (req, res, next) => {
       owner: req.user._id,
       geometry: {
         type: 'Point',
-        coordinates: [longitude,latitude] // 👈 ensure they're numbers
+        coordinates: [longitude,latitude] 
       }
     });
 
-    // console.log("Received Coordinates:", latitude, longitude); // ✅ Good debug log
+
 
     await newListing.save();
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
 
   } catch (err) {
-    next(err); // pass error to error handler
+    next(err); 
   }
 };
 
@@ -94,3 +95,4 @@ module.exports.deleteListing =   async (req, res) => {
   req.flash("success","Listing Deleted !");
   res.redirect("/listings");
 };
+

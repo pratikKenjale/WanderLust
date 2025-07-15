@@ -15,6 +15,7 @@ const dbUrl = process.env.ATLASDB_URL;
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  tls: true,
 });
 
 

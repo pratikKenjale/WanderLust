@@ -1,6 +1,4 @@
 <% layout('layouts/boilerplate') %>
- <!-- const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;  -->
-
 
 
 <div class="row mt-3">
@@ -100,29 +98,19 @@
   </div>
 
 
-
 <!-- Map container -->
 <div class="col-8 offset-3 mb-3">
   <h3>Where you'll be</h3>
 </div>
 
 <div id='map' style='width: 400px; height: 300px;'></div>
-<!-- <script>
-var map = new maplibregl.Map({
-  container: 'map',
-  style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-  center: [-74.5, 40], // starting position [lng, lat]
-  zoom: 9 // starting zoom
-});
-</script> -->
 
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-   const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
-
+   const coordinates = <%= JSON.stringify(listing.geometry.coordinates) %>;
 
   const map = L.map('map').setView([coordinates[1], coordinates[0]], 13);
 
