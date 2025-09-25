@@ -6,7 +6,7 @@ WanderLust is a full-stack web application that allows users to explore, search,
 
 ## 🌐 Live Demo
 
-[👉 https://wanderlust-acu9.onrender.com/listings)  
+[👉 https://wanderlust-1-bppj.onrender.com/listings)  
 *(Note: First load may take a few seconds on free hosting)*
 
 ---
