@@ -42,8 +42,7 @@ WanderLust is a full-stack web application that allows users to explore, search,
 ```bash
 
 git clone https://github.com/pratikkenjale/wanderlust.git
-cd wanderlust
-npm install
-npm start
+cd WanderLust
+nodemon app.js
 
 
