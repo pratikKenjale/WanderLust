@@ -42,16 +42,16 @@ Follow the steps below to run the Wanderlust project on your local machine.
 1. Clone the Repository
    https://github.com/pratikKenjale/WanderLust
 
-2. Open Project Directory (Open the project folder in **VS Code** and navigate to it using the terminal:)
+2. Open Project Directory (Open the project folder in **VS Code** and navigate to it using the terminal): 
    cd WanderLust
 
-3. Install Dependencies
+3. Install Dependencies: 
    npm install
 
-4. Start the Server
+4. Start the Server: 
    nodemon app.js
 
-5. Open in Browser (Open your browser and visit:)
+5. Open in Browser (Open your browser and visit):
   http://localhost:8080/listings
 
 
