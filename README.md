@@ -6,8 +6,8 @@ WanderLust is a full-stack web application that allows users to explore, search,
 
 ## 🌐 Live Demo
 
-[👉 https://wanderlust-1-bppj.onrender.com/listings)  
-*(Note: First load may take a few seconds on free hosting)*
+[👉 https://wanderlust-1-bppj.onrender.com/listings]  
+  *(Note: First load may take a few seconds on free hosting)*
 
 ---
 
@@ -38,11 +38,23 @@ WanderLust is a full-stack web application that allows users to explore, search,
 ---
 
 ## 🚀 Getting Started (Local Setup)
+Follow the steps below to run the Wanderlust project on your local machine.
+1. Clone the Repository
+   https://github.com/pratikKenjale/WanderLust
 
-```bash
+2. Open Project Directory (Open the project folder in **VS Code** and navigate to it using the terminal:)
+   cd WanderLust
 
-git clone https://github.com/pratikkenjale/wanderlust.git
-cd WanderLust
-nodemon app.js
+3. Install Dependencies
+   npm install
+
+4. Start the Server
+   nodemon app.js
+
+5. Open in Browser (Open your browser and visit:)
+  http://localhost:8080/listings
+
+
+
 
 
